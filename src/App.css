@@ -1,0 +1,204 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --xlightcyan: #cefafe;
+  --lightcyan: #a2f4fd;
+  --cyan: #42d3f2;
+  --darkcyan: #2c92b8;
+  --xdarkcyan: #015f78;
+  --xlightgray: #f4f4f5;
+
+  --lightgray: #d4d4d8;
+  --gray: #71717b;
+  --darkgray: #3f3f46;
+  --xdarkgray: #18181b;
+  --black: #09090b;
+  --selected: #0f172b;
+  --unselected: #52525c;
+  --lightcyanshade: #a2f4fd22;
+  --darkcyanhalf: #2c92b888;
+  --darkcyanshade: #2c92b833;
+  --xlightgrayhalf: #f4f4f588;
+  --grayhalf: #71717b88;
+  --fieldset-background: linear-gradient(
+    to right,
+    var(--lightgray),
+    var(--lightgray) 10%,
+    var(--xlightgray) 25%,
+    var(--xlightgray) 35%,
+    var(--lightgray) 75%
+  );
+}
+
+body {
+  min-height: 100dvh;
+  font-family: 'Outfit', -apple-system, ui-sans-serif, system-ui, sans-serif;
+  font-size: 16pt;
+}
+.body {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+.field {
+  display: flex;
+  width: 300px;
+  height: 90px;
+  background: var(--fieldset-background);
+  border: 2px inset var(--lightgray);
+  justify-content: center;
+  align-items: center;
+}
+.field label {
+  position: relative;
+  display: flex;
+  height: 40px;
+  width: 140px;
+  align-items: center;
+}
+legend {
+  display: flex;
+  position: relative;
+  border: 1px outset var(--xdarkcyan);
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: var(--darkcyan);
+  line-height: 1;
+  border-radius: 20px;
+  font-size: 20px;
+  color: var(--xlightcyan);
+  margin-left: 3.5%;
+}
+.field label:first-of-type {
+  border-radius: 20px 0 0 20px;
+}
+.field label:last-of-type {
+  border-radius: 0 20px 20px 0;
+}
+label:has(input[type='radio']) {
+  flex-flow: row nowrap;
+  background-color: var(--lightgray);
+  border: 2px solid var(--gray);
+  color: var(--gray);
+  justify-content: center;
+  box-shadow: inset -2px -2px 6px var(--grayhalf),
+    inset 5px 5px 3px var(--xlightgrayhalf);
+}
+label:has(input[type='radio']:checked) {
+  background-color: var(--cyan);
+  color: var(--selected);
+  border-style: inset;
+  border-color: darkturquoise;
+  box-shadow: 2px 2px 4px var(--darkcyan) inset,
+    inset -2px -2px 8px 1px var(--lightcyan);
+}
+input[type='radio'] {
+  display: none;
+}
+.setup-box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  width: 400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--lightgray);
+}
+.setup {
+  margin-left: 50px;
+  width: 300px;
+}
+.input-box{
+  width: min(200px, 33%);
+  display: flex;
+  flex-flow: column nowrap;
+}
+.outer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightgray);
+  width: 300px;
+}
+.setup-field > legend, .input-field > legend, .main-title {
+  background: var(--fieldset-background);
+  border: 2px outset var(--black);
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 30px;
+  color: var(--black);
+  margin-left: 1.5%;
+}
+
+
+.body {
+  margin-left: 350px;
+  height: 100vh;
+}
+.inputs {
+  height: 50%;
+  width: 100%;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: max(200px, 30vw);
+  justify-content: space-evenly;
+}
+fieldset {
+  margin: none;
+  margin-top: 17px;
+}
+
+.fraction-box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.whole {
+  display: flex;
+  width: 40%;
+  text-align: center;
+}
+.numerator {
+  padding-left: 3px;
+}
+.fraction {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+button {
+  background-color: var(--darkcyan);
+  margin-top: 10px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  width: 75%;
+}
+
+.results{
+  width: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  font-size: larger;
+  background-color: var(--darkgray);
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.results ul{
+  list-style: inside;
+  padding-left: 5px;
+}
